@@ -3,6 +3,7 @@
 import {
   ChevronsLeft,
   MenuIcon,
+  Plus,
   PlusCircle,
   Search,
   Settings
@@ -18,6 +19,7 @@ import { api } from '@/convex/_generated/api';
 
 import { UserItem } from './user-item';
 import { Item } from './item';
+import { DocumentList } from './document-list';
 
 export const Navigation = () => {
   const router = useRouter();
@@ -143,6 +145,14 @@ export const Navigation = () => {
           <Item label='Search' icon={Search} isSearch onClick={() => {}} />
           <Item label='Settings' icon={Settings} onClick={() => {}} />
           <Item onClick={handleCreate} label='New page' icon={PlusCircle} />
+        </div>
+        <div className="mt-4">
+          <DocumentList />
+          <Item
+            onClick={handleCreate}
+            icon={Plus}
+            label="Add a page"
+          />
         </div>
         <div
           onMouseDown={handleMouseDown}
